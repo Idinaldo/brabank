@@ -10,8 +10,7 @@ public class Identity {
     private UUID id;
     private Email email;
     private String passwordHash;
-    // TODO: implement account verification
-    private AccountStatus status = AccountStatus.ACTIVE;
+    private AccountStatus status = AccountStatus.VERIFICATION_PENDING;
 
     public Identity(UUID id, String email, String passwordHash) {
         this.id = id;
@@ -24,7 +23,15 @@ public class Identity {
         this.email = new Email(email);
     }
 
+    public void blockAccount() {
+        this.status = AccountStatus.BLOCKED;
+    }
 
+    public void activateAccount() {
+        this.status = AccountStatus.ACTIVE;
+    }
+
+    // getters and setters
     public UUID getId() {
         return id;
     }
