@@ -2,6 +2,6 @@ package dev.idinaldo.brabank.auth.domain.valueObjects;
 
 public enum AccountStatus {
     ACTIVE,
-    DEACTIVATED,
+    BLOCKED,
     VERIFICATION_PENDING
 }
