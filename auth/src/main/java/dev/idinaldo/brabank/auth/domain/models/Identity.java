@@ -10,7 +10,7 @@ public class Identity {
     private UUID id;
     private Email email;
     private String passwordHash;
-    private AccountStatus status = AccountStatus.VERIFICATION_PENDING;
+    private AccountStatus accountStatus = AccountStatus.VERIFICATION_PENDING;
 
     public Identity(UUID id, String email, String passwordHash) {
         this.id = id;
@@ -24,11 +24,11 @@ public class Identity {
     }
 
     public void blockAccount() {
-        this.status = AccountStatus.BLOCKED;
+        this.accountStatus = AccountStatus.BLOCKED;
     }
 
     public void activateAccount() {
-        this.status = AccountStatus.ACTIVE;
+        this.accountStatus = AccountStatus.ACTIVE;
     }
 
     // getters and setters
@@ -56,11 +56,11 @@ public class Identity {
         this.passwordHash = passwordHash;
     }
 
-    public AccountStatus getStatus() {
-        return status;
+    public AccountStatus getAccountStatus() {
+        return accountStatus;
     }
 
-    public void setStatus(AccountStatus status) {
-        this.status = status;
+    public void setAccountStatus(AccountStatus accountStatus) {
+        this.accountStatus = accountStatus;
     }
 }
