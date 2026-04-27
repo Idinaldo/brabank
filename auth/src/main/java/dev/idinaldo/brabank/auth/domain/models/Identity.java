@@ -2,7 +2,9 @@ package dev.idinaldo.brabank.auth.domain.models;
 
 import dev.idinaldo.brabank.auth.domain.valueObjects.AccountStatus;
 import dev.idinaldo.brabank.auth.domain.valueObjects.Email;
+import dev.idinaldo.brabank.auth.domain.valueObjects.Role;
 
+import java.time.Instant;
 import java.util.UUID;
 
 public class Identity {
@@ -10,7 +12,10 @@ public class Identity {
     private UUID id;
     private Email email;
     private String passwordHash;
-    private AccountStatus accountStatus = AccountStatus.VERIFICATION_PENDING;
+    private AccountStatus status = AccountStatus.PENDING_VERIFICATION;
+    private Role role = Role.CLIENT;
+    private Instant createdAt;
+    private Instant updatedAt;
 
     public Identity(UUID id, String email, String passwordHash) {
         this.id = id;
@@ -23,12 +28,33 @@ public class Identity {
         this.email = new Email(email);
     }
 
+    public Identity() {
+    }
+
+    public Identity(UUID id, Email email, String passwordHash, AccountStatus accountStatus, Role role) {
+        this.id = id;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.status = accountStatus;
+        this.role = role;
+    }
+
+    public Identity(UUID id, Email email, String passwordHash, AccountStatus accountStatus, Role role, Instant createdAt, Instant updatedAt) {
+        this.id = id;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.status = accountStatus;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     public void blockAccount() {
-        this.accountStatus = AccountStatus.BLOCKED;
+        this.status = AccountStatus.BLOCKED;
     }
 
     public void activateAccount() {
-        this.accountStatus = AccountStatus.ACTIVE;
+        this.status = AccountStatus.ACTIVE;
     }
 
     // getters and setters
@@ -56,11 +82,35 @@ public class Identity {
         this.passwordHash = passwordHash;
     }
 
-    public AccountStatus getAccountStatus() {
-        return accountStatus;
+    public AccountStatus getStatus() {
+        return status;
     }
 
-    public void setAccountStatus(AccountStatus accountStatus) {
-        this.accountStatus = accountStatus;
+    public void setStatus(AccountStatus status) {
+        this.status = status;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Instant updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
