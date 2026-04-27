@@ -1,0 +1,3 @@
+ALTER TABLE identities
+ADD CONSTRAINT chk_role
+CHECK (role IN ('ADMIN', 'CLIENT', 'CUSTOMER_SUPPORT'));
