@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: auth
+  datasource:
+    url: ${PSQL_DB_URL:jdbc:postgresql://localhost:5432/brabank_auth}
+    username: ${PSQL_USER:postgres}
+    password: ${PSQL_PW:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+    clean-disabled: false
+    clean-on-validation-error: true
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:change-me-in-production-change-me-in-production}
+    expiration-seconds: ${JWT_EXPIRATION_SECONDS:3600}

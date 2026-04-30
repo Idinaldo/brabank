@@ -1,13 +1,14 @@
 package dev.idinaldo.brabank.auth.adapters.out.persistance;
 
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.stereotype.Repository;
+
 import dev.idinaldo.brabank.auth.adapters.out.JpaIdentity;
 import dev.idinaldo.brabank.auth.application.ports.IdentityMapper;
 import dev.idinaldo.brabank.auth.application.ports.out.IdentityRepository;
 import dev.idinaldo.brabank.auth.domain.models.Identity;
-import dev.idinaldo.brabank.auth.adapters.out.persistance.IdentityJpaRepository;
-import org.springframework.stereotype.Repository;
-
-import java.util.UUID;
 
 @Repository
 public class IdentityRepositoryImpl implements IdentityRepository {
@@ -28,7 +29,12 @@ public class IdentityRepositoryImpl implements IdentityRepository {
     }
 
     @Override
-    public Identity findById(UUID id) {
-        return null;
+    public Optional<Identity> findById(UUID id) {
+        return identityJpaRepository.findById(id).map(identityMapper::jpaEntityToDomain);
+    }
+
+    @Override
+    public Optional<Identity> findByEmail(String email) {
+        return identityJpaRepository.findByEmail(email).map(identityMapper::jpaEntityToDomain);
     }
 }

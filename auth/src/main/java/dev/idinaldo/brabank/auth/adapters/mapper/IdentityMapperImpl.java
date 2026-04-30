@@ -1,12 +1,15 @@
 package dev.idinaldo.brabank.auth.adapters.mapper;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
+
 import dev.idinaldo.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
 import dev.idinaldo.brabank.auth.adapters.out.JpaIdentity;
 import dev.idinaldo.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
 import dev.idinaldo.brabank.auth.application.ports.IdentityMapper;
 import dev.idinaldo.brabank.auth.domain.models.Identity;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
+import dev.idinaldo.brabank.auth.domain.models.IdentityRole;
+import dev.idinaldo.brabank.auth.domain.models.IdentityStatus;
 
 @Component
 public class IdentityMapperImpl implements IdentityMapper {
@@ -20,14 +23,12 @@ public class IdentityMapperImpl implements IdentityMapper {
 
     @Override
     public Identity requestDtoToDomain(IdentityRequestDTO identityRequestDTO) {
-        Identity identity = new Identity();
-
-        String passwordHash = passwordEncoder.encode(identityRequestDTO.password());
-
-        identity.setPasswordHash(passwordHash);
-        identity.setEmail(identityRequestDTO.email());
-
-        return identity;
+        return Identity.builder()
+                .email(identityRequestDTO.email())
+                .passwordHash(passwordEncoder.encode(identityRequestDTO.password()))
+                .status(IdentityStatus.PENDING_VERIFICATION)
+                .role(IdentityRole.CLIENT)
+                .build();
     }
 
     @Override
@@ -37,31 +38,27 @@ public class IdentityMapperImpl implements IdentityMapper {
 
     @Override
     public JpaIdentity domainToJpaEntity(Identity identity) {
-
-        JpaIdentity jpaIdentity = new JpaIdentity();
-
-        jpaIdentity.setId(identity.getId());
-        jpaIdentity.setEmail(identity.getEmail());
-        jpaIdentity.setPasswordHash(identity.getPasswordHash());
-        jpaIdentity.setStatus(identity.getStatus());
-        jpaIdentity.setRole(identity.getRole());
-        jpaIdentity.setCreatedAt(identity.getCreatedAt());
-        jpaIdentity.setUpdatedAt(identity.getUpdatedAt());
-
-        return jpaIdentity;
+        return JpaIdentity.builder()
+                .id(identity.getId())
+                .email(identity.getEmail())
+                .passwordHash(identity.getPasswordHash())
+                .status(identity.getStatus())
+                .role(identity.getRole())
+                .createdAt(identity.getCreatedAt())
+                .updatedAt(identity.getUpdatedAt())
+                .build();
     }
-        @Override
+
+    @Override
     public Identity jpaEntityToDomain(JpaIdentity jpaIdentity) {
-        Identity identity = new Identity();
-
-        identity.setId(jpaIdentity.getId());
-        identity.setEmail(jpaIdentity.getEmail());
-        identity.setPasswordHash(jpaIdentity.getPasswordHash());
-        identity.setStatus(jpaIdentity.getStatus());
-        identity.setRole(jpaIdentity.getRole());
-        identity.setCreatedAt(jpaIdentity.getCreatedAt());
-        identity.setUpdatedAt(jpaIdentity.getUpdatedAt());
-
-        return identity;
+        return Identity.builder()
+                .id(jpaIdentity.getId())
+                .email(jpaIdentity.getEmail())
+                .passwordHash(jpaIdentity.getPasswordHash())
+                .status(jpaIdentity.getStatus())
+                .role(jpaIdentity.getRole())
+                .createdAt(jpaIdentity.getCreatedAt())
+                .updatedAt(jpaIdentity.getUpdatedAt())
+                .build();
     }
 }

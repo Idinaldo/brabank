@@ -1,2 +1,37 @@
-.idea/**
+# IntelliJ / JetBrains
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Java / Maven build artifacts
+**/target/
+**/out/
+*.class
+
+# Logs
+*.log
+logs/
+
+# Runtime / temp files
+*.pid
+*.seed
+*.tmp
+*.swp
+*.swo
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Archives generated locally
 common.zip
+
+# Docker local overrides
+docker-compose.override.yml
