@@ -11,7 +11,7 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d brabank_auth"]
       interval: 5s
-      timeout: 5s
+      timeout: 5s 
       retries: 10
 
   auth_service:
@@ -20,6 +20,7 @@ services:
       db:
         condition: service_healthy
     environment:
+      - SPRING_PROFILES_ACTIVE=prod
       - PSQL_DB_URL=jdbc:postgresql://db:5432/brabank_auth
       - PSQL_USER=postgres
       - PSQL_PW=postgres
