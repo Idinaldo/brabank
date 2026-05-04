@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.auth.adapters.out.dtos;
+package com.brabank.auth.adapters.out.dtos;
 
 public class RestResponseDTO {
     private final String message;

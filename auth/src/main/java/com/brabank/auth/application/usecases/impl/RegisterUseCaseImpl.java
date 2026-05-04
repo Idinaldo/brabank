@@ -1,11 +1,11 @@
-package dev.idinaldo.brabank.auth.application.usecases.impl;
+package com.brabank.auth.application.usecases.impl;
 
-import dev.idinaldo.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
-import dev.idinaldo.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
-import dev.idinaldo.brabank.auth.application.ports.IdentityMapper;
-import dev.idinaldo.brabank.auth.application.ports.out.IdentityRepository;
-import dev.idinaldo.brabank.auth.application.usecases.contracts.RegisterUseCase;
-import dev.idinaldo.brabank.auth.domain.models.Identity;
+import com.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
+import com.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
+import com.brabank.auth.application.ports.IdentityMapper;
+import com.brabank.auth.application.ports.out.IdentityRepository;
+import com.brabank.auth.application.usecases.contracts.RegisterUseCase;
+import com.brabank.auth.domain.models.Identity;
 import org.springframework.stereotype.Component;
 
 @Component

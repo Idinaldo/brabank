@@ -1,6 +1,6 @@
-package dev.idinaldo.brabank.auth.application.ports.out;
+package com.brabank.auth.application.ports.out;
 
-import dev.idinaldo.brabank.auth.domain.models.Identity;
+import com.brabank.auth.domain.models.Identity;
 
 import java.util.UUID;
 

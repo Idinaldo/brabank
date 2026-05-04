@@ -1,8 +1,8 @@
-package dev.idinaldo.brabank.auth.domain.models;
+package com.brabank.auth.domain.models;
 
-import dev.idinaldo.brabank.auth.domain.valueObjects.AccountStatus;
-import dev.idinaldo.brabank.auth.domain.valueObjects.Email;
-import dev.idinaldo.brabank.auth.domain.valueObjects.Role;
+import com.brabank.auth.domain.valueObjects.AccountStatus;
+import com.brabank.auth.domain.valueObjects.Email;
+import com.brabank.auth.domain.valueObjects.Role;
 
 import java.time.Instant;
 import java.util.UUID;

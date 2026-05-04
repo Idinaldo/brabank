@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.auth;
+package com.brabank.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

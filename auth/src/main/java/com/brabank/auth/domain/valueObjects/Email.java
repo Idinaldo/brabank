@@ -1,6 +1,6 @@
-package dev.idinaldo.brabank.auth.domain.valueObjects;
+package com.brabank.auth.domain.valueObjects;
 
-import dev.idinaldo.brabank.auth.infrastructure.exceptions.InvalidEmailException;
+import com.brabank.auth.infrastructure.exceptions.InvalidEmailException;
 
 public class Email {
 

@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.auth.infrastructure.config;
+package com.brabank.auth.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

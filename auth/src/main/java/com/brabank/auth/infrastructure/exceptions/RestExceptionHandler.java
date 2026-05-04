@@ -1,6 +1,6 @@
-package dev.idinaldo.brabank.auth.infrastructure.exceptions;
+package com.brabank.auth.infrastructure.exceptions;
 
-import dev.idinaldo.brabank.auth.adapters.out.dtos.RestResponseDTO;
+import com.brabank.auth.adapters.out.dtos.RestResponseDTO;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.auth.domain.valueObjects;
+package com.brabank.auth.domain.valueObjects;
 
 public enum AccountStatus {
     ACTIVE,

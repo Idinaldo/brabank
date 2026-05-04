@@ -1,8 +1,8 @@
-package dev.idinaldo.brabank.auth.domain.services;
+package com.brabank.auth.domain.services;
 
-import dev.idinaldo.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
-import dev.idinaldo.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
-import dev.idinaldo.brabank.auth.application.usecases.contracts.RegisterUseCase;
+import com.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
+import com.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
+import com.brabank.auth.application.usecases.contracts.RegisterUseCase;
 
 public class IdentityService implements RegisterUseCase {
 

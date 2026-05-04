@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.auth;
+package com.brabank.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

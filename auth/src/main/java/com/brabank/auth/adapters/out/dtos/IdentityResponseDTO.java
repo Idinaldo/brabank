@@ -1,6 +1,6 @@
-package dev.idinaldo.brabank.auth.adapters.out.dtos;
+package com.brabank.auth.adapters.out.dtos;
 
-import dev.idinaldo.brabank.auth.domain.valueObjects.AccountStatus;
+import com.brabank.auth.domain.valueObjects.AccountStatus;
 
 import java.util.UUID;
 

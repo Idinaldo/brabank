@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.auth.infrastructure.exceptions;
+package com.brabank.auth.infrastructure.exceptions;
 
 public class InvalidEmailException extends RuntimeException {
     public InvalidEmailException() {

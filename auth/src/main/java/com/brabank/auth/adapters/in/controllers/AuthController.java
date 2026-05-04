@@ -1,7 +1,7 @@
-package dev.idinaldo.brabank.auth.adapters.in.controllers;
+package com.brabank.auth.adapters.in.controllers;
 
-import dev.idinaldo.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
-import dev.idinaldo.brabank.auth.application.usecases.contracts.RegisterUseCase;
+import com.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
+import com.brabank.auth.application.usecases.contracts.RegisterUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

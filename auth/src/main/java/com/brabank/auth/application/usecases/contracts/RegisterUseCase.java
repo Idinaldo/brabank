@@ -1,7 +1,7 @@
-package dev.idinaldo.brabank.auth.application.usecases.contracts;
+package com.brabank.auth.application.usecases.contracts;
 
-import dev.idinaldo.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
-import dev.idinaldo.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
+import com.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
+import com.brabank.auth.adapters.out.dtos.IdentityResponseDTO;
 
 public interface RegisterUseCase {
     IdentityResponseDTO execute(IdentityRequestDTO identityRequestDTO);

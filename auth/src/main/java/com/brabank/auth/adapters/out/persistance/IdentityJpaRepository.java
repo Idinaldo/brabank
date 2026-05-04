@@ -1,6 +1,6 @@
-package dev.idinaldo.brabank.auth.adapters.out.persistance;
+package com.brabank.auth.adapters.out.persistance;
 
-import dev.idinaldo.brabank.auth.adapters.out.JpaIdentity;
+import com.brabank.auth.adapters.out.JpaIdentity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

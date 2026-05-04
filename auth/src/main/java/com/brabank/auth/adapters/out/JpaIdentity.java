@@ -1,7 +1,7 @@
-package dev.idinaldo.brabank.auth.adapters.out;
+package com.brabank.auth.adapters.out;
 
-import dev.idinaldo.brabank.auth.domain.valueObjects.AccountStatus;
-import dev.idinaldo.brabank.auth.domain.valueObjects.Role;
+import com.brabank.auth.domain.valueObjects.AccountStatus;
+import com.brabank.auth.domain.valueObjects.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
