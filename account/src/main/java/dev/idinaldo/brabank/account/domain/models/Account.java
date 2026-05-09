@@ -10,25 +10,18 @@ public class Account {
 
     private UUID id = UUID.randomUUID();
     private UUID userId;
-    private BigDecimal balance = new BigDecimal(0); // this will be updated when we implement ledger
+    private BigDecimal balance = new BigDecimal("0.00");
     private Status status = Status.PENDING_VERIFICATION;
     private String accountNumber;
-    private String bankCode = "BBNKBRRE";
-    private String bankBranch = "81";
+    private String bankBranch;
     private Instant createdAt;
     private Instant updatedAt;
 
-    public Account(UUID userId, UUID id, BigDecimal balance, Status status, String accountNumber, Instant createdAt, Instant updatedAt) {
+    public Account(UUID userId) {
         this.userId = userId;
-        this.id = id;
-        this.balance = balance;
-        this.status = status;
-        this.accountNumber = accountNumber;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
-    public Account(UUID userId) {
+    public Account(UUID userId, String bankBranch) {
         this.userId = userId;
     }
 
@@ -43,6 +36,7 @@ public class Account {
     public void deactivateUser() {
         this.status = Status.DEACTIVATED;
     }
+
 
     // getters and setters
     public UUID getId() {
@@ -83,14 +77,6 @@ public class Account {
 
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
-    }
-
-    public String getBankCode() {
-        return bankCode;
-    }
-
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
     }
 
     public String getBankBranch() {
