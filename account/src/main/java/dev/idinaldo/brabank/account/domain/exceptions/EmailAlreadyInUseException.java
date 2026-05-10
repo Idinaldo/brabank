@@ -1,4 +1,4 @@
-package dev.idinaldo.brabank.account.infrastructure.exceptions;
+package dev.idinaldo.brabank.account.domain.exceptions;
 
 public class EmailAlreadyInUseException extends RuntimeException {
     public EmailAlreadyInUseException(String message) {
