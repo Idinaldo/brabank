@@ -16,7 +16,7 @@ public class User {
     private String email;
     private PhoneNumber phoneNumber;
     private CPF cpf;
-    private Status status = Status.PENDING_VERIFICATION;
+    private Status status = Status.PENDING_KYC_VERIFICATION;
     private Instant createdAt;
     private Instant updatedAt;
 
@@ -38,6 +38,10 @@ public class User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.cpf = cpf;
+    }
+
+    public User() {
+
     }
 
     public void activateUser() {
