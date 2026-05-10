@@ -1,6 +1,6 @@
 package dev.idinaldo.brabank.account.domain.valueObjects;
 
-import dev.idinaldo.brabank.account.infrastructure.exceptions.InvalidPhoneNumberException;
+import dev.idinaldo.brabank.account.domain.exceptions.InvalidPhoneNumberException;
 
 public record PhoneNumber(String phoneNumber) {
 

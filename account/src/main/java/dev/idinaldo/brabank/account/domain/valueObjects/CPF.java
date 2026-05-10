@@ -1,6 +1,6 @@
 package dev.idinaldo.brabank.account.domain.valueObjects;
 
-import dev.idinaldo.brabank.account.infrastructure.exceptions.InvalidCpfException;
+import dev.idinaldo.brabank.account.domain.exceptions.InvalidCpfException;
 
 public record CPF(String cpf) {
 

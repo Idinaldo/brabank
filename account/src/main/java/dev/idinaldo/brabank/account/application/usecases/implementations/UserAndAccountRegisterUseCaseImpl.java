@@ -4,8 +4,8 @@ import dev.idinaldo.brabank.account.application.ports.persistence.IAccountReposi
 import dev.idinaldo.brabank.account.application.usecases.contracts.IUserAndAccountRegisterUseCase;
 import dev.idinaldo.brabank.account.domain.models.Account;
 import dev.idinaldo.brabank.account.domain.models.User;
-import dev.idinaldo.brabank.account.infrastructure.exceptions.CpfAlreadyInUseException;
-import dev.idinaldo.brabank.account.infrastructure.exceptions.EmailAlreadyInUseException;
+import dev.idinaldo.brabank.account.domain.exceptions.CpfAlreadyInUseException;
+import dev.idinaldo.brabank.account.domain.exceptions.EmailAlreadyInUseException;
 import dev.idinaldo.brabank.account.application.ports.persistence.IUserRepository;
 
 // TODO: review exceptions for cybersecurity concerns (account mapping, data exposure)
