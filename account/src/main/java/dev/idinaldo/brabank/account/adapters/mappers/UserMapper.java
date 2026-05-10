@@ -1,18 +1,15 @@
 package dev.idinaldo.brabank.account.adapters.mappers;
 
 import dev.idinaldo.brabank.account.adapters.out.entities.JpaUser;
-import dev.idinaldo.brabank.account.application.ports.IUserMapper;
 import dev.idinaldo.brabank.account.domain.models.User;
 import org.springframework.stereotype.Component;
 
 @Component
-public class IUserMapperImpl implements IUserMapper {
+public class UserMapper {
 
-    @Override
     public JpaUser domainToEntity(User user) {
         JpaUser jpaUser = new JpaUser();
 
-        // NOTE: useful when updating entity
         if (user.getId() != null) {
             jpaUser.setId(user.getId());
         }
@@ -26,7 +23,6 @@ public class IUserMapperImpl implements IUserMapper {
         return jpaUser;
     }
 
-    @Override
     public User entityToDomain(JpaUser jpaUser) {
         User user = new User();
 
