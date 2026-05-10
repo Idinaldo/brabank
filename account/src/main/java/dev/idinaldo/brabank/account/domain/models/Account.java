@@ -8,12 +8,12 @@ import java.util.UUID;
 
 public class Account {
 
-    private UUID id = UUID.randomUUID();
+    private UUID id;
     private UUID userId;
     private BigDecimal balance = new BigDecimal("0.00");
-    private Status status = Status.PENDING_VERIFICATION;
+    private Status status = Status.PENDING_KYC_VERIFICATION;
     private String accountNumber;
-    private String bankBranch;
+    private String branchCode;
     private Instant createdAt;
     private Instant updatedAt;
 
@@ -79,12 +79,12 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    public String getBankBranch() {
-        return bankBranch;
+    public String getBranchCode() {
+        return branchCode;
     }
 
-    public void setBankBranch(String bankBranch) {
-        this.bankBranch = bankBranch;
+    public void setBranchCode(String branchCode) {
+        this.branchCode = branchCode;
     }
 
     public Instant getCreatedAt() {
