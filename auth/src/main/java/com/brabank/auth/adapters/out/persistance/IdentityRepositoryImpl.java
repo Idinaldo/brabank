@@ -6,6 +6,7 @@ import com.brabank.auth.application.ports.out.IdentityRepository;
 import com.brabank.auth.domain.models.Identity;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -29,5 +30,11 @@ public class IdentityRepositoryImpl implements IdentityRepository {
     @Override
     public Identity findById(UUID id) {
         return null;
+    }
+
+    @Override
+    public Optional<Identity> findByEmail(String email) {
+        return identityJpaRepository.findByEmail(email)
+                .map(identityMapper::jpaEntityToDomain);
     }
 }
