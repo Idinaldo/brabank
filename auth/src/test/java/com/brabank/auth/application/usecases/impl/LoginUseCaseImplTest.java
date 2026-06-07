@@ -55,7 +55,7 @@ class LoginUseCaseImplTest {
         assertNotNull(response);
         assertEquals(identity.getId(), response.id());
         assertEquals("user@brabank.com", response.email());
-        assertEquals(AccountStatus.ACTIVE, response.accountStatus());
+        assertEquals(AccountStatus.ACTIVE, response.status());
         assertEquals(Role.CLIENT, response.role());
         verify(identityRepository).findByEmail("user@brabank.com");
         verify(passwordEncoder).matches("rawPassword", "hashedPassword");

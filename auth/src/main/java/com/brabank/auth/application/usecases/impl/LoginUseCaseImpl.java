@@ -38,8 +38,8 @@ public class LoginUseCaseImpl implements LoginUseCase {
         return new LoginResponseDTO(
                 identity.getId(),
                 identity.getEmail(),
-                identity.getRole(),
-                identity.getStatus()
+                identity.getStatus(),
+                identity.getRole()
         );
     }
 }
