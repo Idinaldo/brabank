@@ -1,6 +1,8 @@
 package com.brabank.auth.adapters.in.controllers;
 
 import com.brabank.auth.adapters.in.dtos.IdentityRequestDTO;
+import com.brabank.auth.adapters.in.dtos.LoginRequestDTO;
+import com.brabank.auth.application.usecases.contracts.LoginUseCase;
 import com.brabank.auth.application.usecases.contracts.RegisterUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -15,13 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final RegisterUseCase registerUseCase;
+    private final LoginUseCase loginUseCase;
 
-    public AuthController(RegisterUseCase registerUseCase) {
+    public AuthController(RegisterUseCase registerUseCase, LoginUseCase loginUseCase) {
         this.registerUseCase = registerUseCase;
+        this.loginUseCase = loginUseCase;
     }
 
     @PostMapping("/register")
     public ResponseEntity<?> registerIdentity(@RequestBody @Valid IdentityRequestDTO identityRequestDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(registerUseCase.execute(identityRequestDTO));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginIdentity(@RequestBody @Valid LoginRequestDTO loginRequestDTO) {
+        return ResponseEntity.ok(loginUseCase.execute(loginRequestDTO));
     }
 }
